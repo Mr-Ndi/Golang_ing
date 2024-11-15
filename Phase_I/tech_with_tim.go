@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func main()  {
-	fmt.Println("Hello this is the first golang file")
+func main() {
+	Igihimba()
+	fmt.Println("Hello, this is the first Golang file")
 }
