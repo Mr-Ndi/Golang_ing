@@ -1,6 +1,8 @@
 package main
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -14,6 +16,19 @@ func main() {
 		c.JSON(200, gin.H{
 			"Ubutumwa": "Hii  :) !!",
 			"status":   "Byakunze, can't u tell pls",
+		})
+	})
+
+	//defining a simple post request for bite2
+	rimwe.POST("/bite2", func(c *gin.Context) {
+		var json map[string]interface{}
+		if err := c.BindJSON(&json); err != nill {
+			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+			return
+		}
+		c.JSON(http.StatusOK, gin.H{
+			"Message": "Kohereza request",
+			"datum":   "sample datum",
 		})
 	})
 
